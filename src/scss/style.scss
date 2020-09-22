@@ -1,84 +1,121 @@
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .wrapper {
-   width: 100vw;
-   height: 100vh;
-   background: linear-gradient(90deg, rgb(0, 171, 252), rgb(0, 253, 111));
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(0, 171, 252), rgb(0, 253, 111));
 
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calc {
-   width: 35vw;
-   height: 60vh;
-   box-shadow: 2px 2px 3px #000;
-   border-radius: 5px;
+  width: 35vw;
+  height: 60vh;
+  box-shadow: 2px 2px 3px #000;
+  border-radius: 5px;
 
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .calc__screen {
-   height: 20%;
-   border: 1px solid rgba(0, 0, 0, 1);
-   border-radius: 5px 5px 0 0;
+  height: 20%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 5px 5px 0 0;
 }
 
 .calc__screen > input {
-   display: inline-block;
-   width: 99.9%;
-   height: 100%;
-   text-align: right;
-   padding: 0 7px 0 0;
-   background: #000;
-   color: #fff;
-   font-size: 20px;
+  display: inline-block;
+  width: 99.9%;
+  height: 100%;
+  text-align: right;
+  padding: 0 7px 0 0;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
 
-   border: 0;
-   outline: 0;
+  border: 0;
+  outline: 0;
 }
 
-.calc__keybord {
-   background: #e6fbf7;
-   height: 80%;
-   border: 1px solid #e6fbf7;
-   border-radius: 0 0 5px 5px;
+.calc__keyboard {
+  background: #e6fbf7;
+  height: 80%;
+  border: 1px solid #e6fbf7;
+  border-radius: 0 0 5px 5px;
+  user-select: none;
 
-   display: grid;
-   grid-template-columns: repeat(4, 24%);
-   grid-template-rows: repeat(5, 19%);
-   grid-template-areas:
-      "ac larr radic sup2"
-      "seven eight nine plus"
-      "four five six minus"
-      "one two three time"
-      "point zero equal divide";
-   grid-gap: 1%;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-template-rows: repeat(5, 19%);
+  grid-template-areas:
+     "ac larr radic sup2"
+     "seven eight nine plus"
+     "four five six minus"
+     "one two three time"
+     "point zero equal divide";
+  grid-gap: 1%;
 }
 
 .calc__number {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-   border: 1px solid #bff4ed;
-   border-radius: 5px;
-   background: #bff4ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #bff4ed;
+  border-radius: 5px;
+  background: #bff4ed;
 
-   font-size: 20px;
+  font-size: 20px;
 }
 
-.calc__number > span {
-   display: block;
+#point {
+  grid-area: point;
+}
+
+#times {
+  grid-area: time;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#sup2 {
+  grid-area: sup2;
+}
+
+#radic {
+  grid-area: radic;
+}
+
+#larr {
+  grid-area: larr;
+}
+
+#ac {
+  grid-area: ac;
 }

@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 html(lang="en")
-   head
-      meta(charset="UTF-8")
-      meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      link(rel="stylesheet", href="css/normalize.css")
-      link(rel="stylesheet", href="css/style.css")
-      title Calculator
-   body
-      section(class="wrapper")
-         div(class="calc")
-            div(class="calc__screen")
-               input(type="text" placeholder="0")
-            div(class="calc__keybord")
-               p(class="calc__number" id="ac")
-                  span AC
-               p(class="calc__number" id="larr")
-                  span &larr;
-               p(class="calc__number" id="radic")
-                  span &radic;
-               p(class="calc__number" id="sup2")
-                  span x&sup2;
-               p(class="calc__number" id="plus")
-                  span +
-               p(class="calc__number" id="minus")
-                  span -
-               p(class="calc__number" id="times")
-                  span &times;
-               p(class="calc__number" id="divide")
-                  span &divide;
-               p(class="calc__number" id="equal")
-                  span =
-               p(class="calc__number" id="point")
-                  span .
-      script(src="js/getNumbers.js")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="assets/css/normalize.css")
+    link(rel="stylesheet", href="assets/css/style.css")
+    title Calculator
+  body
+    section(class="wrapper")
+      div(class="calc")
+          div(class="calc__screen")
+            input(type="text" placeholder="0" class="calc__type-digit")
+          div(class="calc__keyboard")
+            p(class="calc__number" id="ac" data-sing="o")
+              span AC
+            p(class="calc__number" id="larr" data-sing="a")
+              span &larr;
+            p(class="calc__number" id="radic" data-sing="r")
+              span &radic;
+            p(class="calc__number" id="sup2" data-sing="^")
+              span x&sup2;
+            p(class="calc__number" id="plus" data-sing="+")
+              span +
+            p(class="calc__number" id="minus" data-sing="-")
+              span -
+            p(class="calc__number" id="times" data-sing="*")
+              span &times;
+            p(class="calc__number" id="divide" data-sing="/")
+              span &divide;
+            p(class="calc__number" id="equal" data-sing="=")
+              span =
+            p(class="calc__number" id="point" data-sing=".")
+              span .
+    script(src="assets/js/script.js")
