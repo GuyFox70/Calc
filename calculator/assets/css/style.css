@@ -42,29 +42,35 @@ body {
 }
 
 .calc__screen {
-  height: 20%;
+  height: 25%;
   border: 1px solid black;
   border-radius: 5px 5px 0 0;
-}
-
-.calc__screen > input {
-  display: inline-block;
-  width: 99.9%;
-  height: 100%;
-  text-align: right;
-  padding: 0 7px 0 0;
   background: #000;
+  padding: 0 7px 7px 0;
   color: #fff;
   font-size: 20px;
-  border: 0;
-  outline: 0;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.calc__keybord {
+.calc__keyboard {
   background: #e6fbf7;
-  height: 80%;
+  height: 75%;
   border: 1px solid #e6fbf7;
   border-radius: 0 0 5px 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: grid;
   grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(5, 19%);
@@ -89,6 +95,42 @@ body {
   font-size: 20px;
 }
 
-.calc__number > span {
-  display: block;
+#point {
+  grid-area: point;
+}
+
+#times {
+  grid-area: time;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#sup2 {
+  grid-area: sup2;
+}
+
+#radic {
+  grid-area: radic;
+}
+
+#larr {
+  grid-area: larr;
+}
+
+#ac {
+  grid-area: ac;
 }

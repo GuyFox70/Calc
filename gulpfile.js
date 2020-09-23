@@ -6,8 +6,8 @@ const fs = require('fs');
 const path = {
    build: {
       html: project_folder + '/',
-      css: project_folder + '/css/',
-      js: project_folder + '/js/',
+      css: project_folder + '/assets/css/',
+      js: project_folder + '/assets/js/',
       img: project_folder + '/img/',
       fonts: project_folder + '/fonts/',
       lib: project_folder + '/lib/'
