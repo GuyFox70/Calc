@@ -50,6 +50,7 @@ body {
   color: #fff;
   font-size: 20px;
   text-align: right;
+  vertical-align: middle;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +61,13 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.calc__num1 {
+  font-size: 30px;
 }
 
 .calc__keyboard {
@@ -133,4 +141,8 @@ body {
 
 #ac {
   grid-area: ac;
+}
+
+.hide {
+  display: none;
 }

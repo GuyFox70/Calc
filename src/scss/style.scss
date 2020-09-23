@@ -38,10 +38,16 @@ body {
    color: #fff;
    font-size: 20px;
    text-align: right;
+   vertical-align: middle;
 
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
+   align-items: flex-end;
+}
+
+.calc__num1 {
+   font-size: 30px;
 }
 
 .calc__keyboard {
@@ -113,4 +119,8 @@ body {
 
 #ac {
    grid-area: ac;
+}
+
+.hide {
+   display: none;
 }
