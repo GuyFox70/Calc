@@ -8,15 +8,15 @@
 
   const objMathActions = {
     'add': [function (a, b) {
-      return parseFloat(a) + parseFloat(b);
+      return (parseFloat(a) + parseFloat(b)).toFixed(defindeNumbersAfterPointForAddOrMinus([a, b]));
     }, '+'],
 
     'minus': [function (a, b) {
-      return parseFloat(a) - parseFloat(b);
+      return (parseFloat(a) - parseFloat(b)).toFixed(defindeNumbersAfterPointForAddOrMinus([a, b]));
     }, '-'],
 
     'multiply': [function (a, b) {
-      return parseFloat(a) * parseFloat(b);
+      return (parseFloat(a) * parseFloat(b)).toFixed(defindeNumbersAfterPointForMultiply([a, b]));
     }, '*'],
 
     'divide': [function (a, b) {
@@ -50,7 +50,11 @@
 
     }
 
-    if ((action == 0 && getText(num1) == '0') || (action == '.' && (getText(num1) == '.' || getText(num1) == '0.'))) return;
+    if ((action == 0 && getText(num1) == '0') || (action == '.' && (getText(num1) == '.' || getText(num1) == '0.'))) {
+      alert('You entried wrong value!!!');
+      addText(num1, '');
+      return;
+    };
 
     if (action != 0 && getText(num1) == '0' && action != '.') addText(num1, '');
 
@@ -93,7 +97,10 @@
 
     } else if (action == 'pow') {
 
-      if (getText(num1) == '' || getText(num1) == '-' || getText(num1) == '.') return;
+      if (getText(num1) == '' || getText(num1) == '-' || getText(num1) == '.') {
+        alert('The first symbol, it has to be a number then degree of number!');
+        return;
+      }
 
       addText(num1, getText(num1) + '^');
 
@@ -178,6 +185,30 @@
     arr.forEach(elem => {
       elem.classList.remove(style);
     })
+  }
+
+  function defindeNumbersAfterPointForAddOrMinus(arr) {
+    const result = [];
+
+    arr.forEach(elem => {
+      if (elem.includes('.')) {
+        result.push(elem.split('.')[1].replace(/\D/g, '').trim().length);
+      }
+    });
+
+    return result.length != 0 ? Math.max.apply(null, result) : 0;
+  }
+
+  function defindeNumbersAfterPointForMultiply(arr) {
+    let sum = 0;
+
+    arr.forEach(elem => {
+      if (elem.includes('.')) {
+        sum += parseInt(elem.split('.')[1].replace(/\D/g, '').trim().length);
+      }
+    });
+
+    return sum;
   }
 
 })();
