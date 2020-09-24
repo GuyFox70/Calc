@@ -50,26 +50,36 @@
 
     }
 
-    if ((action == 0 && getText(num1) == '0')) return;
-
-    if (action == '.' && getText(num1) == '.') return;
+    if ((action == 0 && getText(num1) == '0') || (action == '.' && (getText(num1) == '.' || getText(num1) == '0.'))) return;
 
     if (action != 0 && getText(num1) == '0' && action != '.') addText(num1, '');
 
     if (lastActions.length > 1) lastActions.shift();
 
-    if (action == 'ac') {
+    if (action == 'reset') {
 
       addText(num1, '');
       addText(num2, '');
 
-    } else if (action == 'l') {
+    } else if (action == 'backspace') {
 
       addText(num1, getText(num1).slice(0, -1));
 
-    } else if (action == 'r') {
+    } else if (action == 'sqrt') {
 
-      if (getText(num2) || getText(num1) == '' || getText(num1) == '-' || getText(num1) == '.') return;
+      if (getText(num2) || getText(num1) == '-' || getText(num1) == '.') {
+
+        alert('You entred wrong value! Please, correct it!');
+        addText(num1, '');
+        return;
+
+      } else if (getText(num1) == '') {
+
+        alert('You need entry some number in field!');
+        addText(num1, '');
+        return;
+
+      }
 
       if (getText(num1) < 0) {
 
@@ -79,7 +89,7 @@
 
       }
 
-      addText(num1, Math.sqrt(parseInt(getText(num1))));
+      addText(num1, Math.sqrt(parseFloat(getText(num1))));
 
     } else if (action == 'pow') {
 
