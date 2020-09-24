@@ -27,15 +27,15 @@
 
   const objMathActions = {
     'add': [function (a, b) {
-      return (parseFloat(a) + parseFloat(b)).toFixed(defindeNumbersAfterPointForAddOrMinus([a, b]));
+      return (parseFloat(a) + parseFloat(b)).toFixed(defineNumbersAfterPointForAddOrMinus([a, b]));
     }, '+'],
 
     'minus': [function (a, b) {
-      return (parseFloat(a) - parseFloat(b)).toFixed(defindeNumbersAfterPointForAddOrMinus([a, b]));
+      return (parseFloat(a) - parseFloat(b)).toFixed(defineNumbersAfterPointForAddOrMinus([a, b]));
     }, '-'],
 
     'multiply': [function (a, b) {
-      return (parseFloat(a) * parseFloat(b)).toFixed(defindeNumbersAfterPointForMultiply([a, b]));
+      return (parseFloat(a) * parseFloat(b)).toFixed(defineNumbersAfterPointForMultiply([a, b]));
     }, '*'],
 
     'divide': [function (a, b) {
@@ -90,16 +90,14 @@
 
     } else if (action == 'sqrt') {
 
-      if (getText(num2) || getText(num1) == '-' || getText(num1) == '.') {
+      if (getText(num2) || getText(num1) == '-' || getText(num1) == '.' || getText(num1).includes('^')) {
 
-        alert('You entred wrong value! Please, correct it!');
-        addText(num1, '');
+        alert('You type wrong value! Please, correct it!');
         return;
 
       } else if (getText(num1) == '') {
 
-        alert('You need entry some number in field!');
-        addText(num1, '');
+        alert('You need type some number in field!');
         return;
 
       }
@@ -115,6 +113,8 @@
       addText(num1, Math.sqrt(parseFloat(getText(num1))));
 
     } else if (action == 'pow') {
+
+      if (getText(num2)) return;
 
       if (getText(num1) == '' || getText(num1) == '-' || getText(num1) == '.') {
         alert('The first symbol, it has to be a number then degree of number!');
@@ -206,7 +206,7 @@
     })
   }
 
-  function defindeNumbersAfterPointForAddOrMinus(arr) {
+  function defineNumbersAfterPointForAddOrMinus(arr) {
     const result = [];
 
     arr.forEach(elem => {
@@ -218,7 +218,7 @@
     return result.length != 0 ? Math.max.apply(null, result) : 0;
   }
 
-  function defindeNumbersAfterPointForMultiply(arr) {
+  function defineNumbersAfterPointForMultiply(arr) {
     let sum = 0;
 
     arr.forEach(elem => {
