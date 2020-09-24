@@ -30,7 +30,7 @@ body {
 }
 
 .calc__screen {
-   height: 25%;
+   min-height: 25%;
    border: 1px solid rgba(0, 0, 0, 1);
    border-radius: 5px 5px 0 0;
    background: #000;
@@ -39,11 +39,18 @@ body {
    font-size: 20px;
    text-align: right;
    vertical-align: middle;
+   overflow: auto;
 
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
    align-items: flex-end;
+
+   & > .calc__num1 {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+   }
 }
 
 .calc__num1 {
@@ -123,8 +130,4 @@ body {
 
 #ac {
    grid-area: ac;
-}
-
-.hide {
-   display: none;
 }
